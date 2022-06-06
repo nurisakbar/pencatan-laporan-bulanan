@@ -102,5 +102,4 @@
 @foreach($activities as $row)
 <img src="{{asset("storage/".$row->file)}}" width="700px"><br>
 <p>{{ strip_tags($row->activity)}} ( {{ $row->date }} ) </p>
-<br>
 @endforeach
