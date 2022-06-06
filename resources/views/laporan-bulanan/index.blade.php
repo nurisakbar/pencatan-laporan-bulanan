@@ -66,6 +66,6 @@
 <div class="page_break"></div>
 <h4 style="text-align: center">LAMPIRAN B : OUTPUT PEKERJAAN</h4>
 @foreach($activities as $row)
-<img src="{{asset("storage/".$row->file)}}" width="600px"><br>
+<img src="{{asset("storage/".$row->file)}}" width="700px"><br>
 {!!$row->activity!!}
 @endforeach
