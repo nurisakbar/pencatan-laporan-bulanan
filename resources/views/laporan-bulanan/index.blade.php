@@ -64,7 +64,7 @@
 </div>
 
 
-{{-- @foreach($activities as $row)
+@foreach($activities as $row)
 <img src="{{asset("storage/".$row->file)}}" width="300px"><br>
 {!!$row->activity!!}
-@endforeach --}}
+@endforeach
