@@ -15,6 +15,19 @@
     width: 100%;
     border-collapse: collapse;
     }
+    .signature-name{
+        font-weight: bold;
+        margin-bottom:-10px;
+        text-decoration:underline;
+        margin-top:70px;
+    }
+    .signature{
+        margin-top:30px;
+        width:165px;
+        text-align: center;
+        margin-right: 10px;
+        float: left;
+    }
 </style>
 
 <div id="cover">
@@ -61,11 +74,32 @@
             </tr>
         @endforeach
     </table>
+
+    <div class="signature">
+        <p>Penyusun</p>
+        <p class="signature-name">{{ Auth::user()->name }}</p>
+        <p>Program Manager Pelayanan Kesehatan Primer</p>
+    </div>
+    <div class="signature">
+        <p>Pemeriksa</p>
+        <p class="signature-name">{{ Auth::user()->name }}</p>
+        <p>Program Manager Pelayanan Kesehatan Primer</p>
+    </div>
+    <div class="signature">
+        <p>Menyetujui</p>
+        <p class="signature-name">Agus Rachmanto</p>
+        <p>Deputy Chief of Digital Transformation Office</p>
+    </div>
+    <div class="signature">
+        <p>Mengetahui</p>
+        <p class="signature-name">ir. Zulfi, MM</p>
+        <p>Penjabat Pembuat Komitment</p>
+    </div>
 </div>
 
-<div class="page_break"></div>
+{{-- <div class="page_break"></div>
 <h4 style="text-align: center">LAMPIRAN B : OUTPUT PEKERJAAN</h4>
 @foreach($activities as $row)
 <img src="{{asset("storage/".$row->file)}}" width="700px"><br>
 {!!$row->activity!!}
-@endforeach
+@endforeach --}}
