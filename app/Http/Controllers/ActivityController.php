@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 // use App\Http\Requests\UserCreateRequest;
 use App\Activity;
 use Auth;
+use Image;
 class ActivityController extends Controller
 {
     public function __construct()
@@ -66,6 +67,14 @@ class ActivityController extends Controller
         $data               = $request->all();
         if ($request->hasFile('file')) {
             $file       = $request->file('file');
+            // convert
+            // $nameImage = $request->file('file')->getClientOriginalName();
+
+            // $thumbImage = Image::make($file->getRealPath())->resize(700);
+            // $thumbPath = \Storage::path('public/thumbnail_images/'. $nameImage);
+            // $thumbImage = Image::make($thumbImage)->save($thumbPath);
+
+
             $fileName   = 'file_' . time() . '.' . $file->getClientOriginalExtension();
             \Storage::putFileAs('public', $request->file('file'), $fileName);
             $data['file'] = $fileName;
