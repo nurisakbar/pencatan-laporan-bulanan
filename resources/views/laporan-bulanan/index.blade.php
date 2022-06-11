@@ -41,7 +41,7 @@
         <p style="margin-top:200px;text-decoration: underline;font-weight:bold;">LAPORAN KEGIATAN BULANAN</p>
         <p>Periode Mei 2022</p>
         <p style="margin-top:200px;text-decoration: underline;font-weight:bold;">{{ Auth::user()->name }}</p>
-        <p>Program Manager Pelayanan Kesehatan Primer[Jabatan Tenaga Ahli]</p>
+        <p>Program Manager Pelayanan Kesehatan Primer [ {{ Auth::user()->jabatan }} ]</p>
 </div>
 
 <div class="page_break"></div>
@@ -53,8 +53,8 @@
         Digital Tranformation Office Pusat Data dan Teknologi Informasi Kementerian Kesehatan RI[Time Sheet kegiatan harian tenaga ahli]
     </p>
     <p>Nama	&nbsp;&nbsp;&nbsp;&nbsp;: Nuris Akbar</p>
-    <p>Jabatan	&nbsp;: Program Manager Pelayanan Kesehatan Primer</p>     
-    <p>Periode	&nbsp;: Mei 2022</p>
+    <p>Jabatan	&nbsp;: {{ Auth::user()->jabatan }}</p>     
+    <p>Periode	&nbsp;: {{ date('M Y')}}</p>
 
     <table>
         <tr>
