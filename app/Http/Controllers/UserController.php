@@ -262,7 +262,19 @@ class UserController extends Controller
     {
         $id             = Auth::user()->id;
         $data['user']   = User::find($id);
-        return view('user.profile', $data);
+        
+        return view('auth.profile', $data);
+    }
+
+    public function profileUpdate(Request $request){
+        $user   = User::findOrFail(Auth::user()->id);
+        if($request->password!=''){
+            $request['password'] = Hash::make($request->password);
+        }else{
+            unset($request['password']);
+        }
+        $user->update($request->all());
+        return redirect('profile')->with('message','Berhasil Melakukan Perubahan Profile');
     }
 
     public function updateProfile(Request $request)

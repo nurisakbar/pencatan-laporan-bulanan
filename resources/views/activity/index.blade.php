@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Uraian Kegiatan</div>
+                <div class="card-header">Uraian Kegiatan Periode {{ date('M Y') }}</div>
 
                 <div class="card-body">
                     @include('alert')

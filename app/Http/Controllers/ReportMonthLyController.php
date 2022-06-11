@@ -9,7 +9,7 @@ use PDF;
 class ReportMonthLyController extends Controller
 {
     public function index(){
-        $data['activities'] = Activity::all();
+        $data['activities'] = Activity::where('user_id',Auth::user()->id)->get();
         $pdf = PDF::loadView('laporan-bulanan.index', $data)->setPaper('A4', 'potrait');
         return $pdf->stream('laporan-bulanan.pdf');
         // return view('laporan-bulanan.index',$data);

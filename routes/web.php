@@ -20,5 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'UserController@profile');
+Route::post('/profile', 'UserController@profileUpdate');
 Route::resource('activity','ActivityController');
 Route::resource('report','ReportMonthLyController');

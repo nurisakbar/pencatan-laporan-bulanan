@@ -28,9 +28,9 @@ class ActivityController extends Controller
 
     public function index(Request $request)
     {
-        //$this->verify();
+        $activity = Activity::where('user_id',Auth::user()->id)->get();
         if ($request->ajax()) {
-            return \DataTables::of(Activity::all())
+            return \DataTables::of($activity)
             ->addColumn('action', function ($activity) {
                 $btn = \Form::open(['url' => 'activity/' . $activity->id, 'method' => 'DELETE','style' => 'float:right;margin-right:5px']);
                 $btn .= "<button type='submit' class='btn btn-danger btn-sm'><i class='fa fa-trash' aria-hidden='true'></i></button>";
